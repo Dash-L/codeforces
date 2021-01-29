@@ -12,7 +12,7 @@ macro_rules! input {
 
 macro_rules! parse_input {
     ( $ty:ty ) => {
-        input!().trim().parse::<$ty>().unwrap()
+        input!().parse::<$ty>().unwrap()
     };
 
     ( $( $ty:ty ),+ ) => {

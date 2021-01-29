@@ -1,3 +1,3 @@
 #!/bin/sh
 
-find . -type f -not -name '*.rs' -not -name '*.sh' -delete
+find . -maxdepth 1 -type f -not -name "*.sh" -executable -delete
