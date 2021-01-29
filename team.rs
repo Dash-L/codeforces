@@ -11,6 +11,10 @@ macro_rules! input {
 }
 
 macro_rules! parse_input {
+    ( $ty:ty ) => {
+        input!().trim().parse::<$ty>().unwrap()
+    };
+
     ( $( $ty:ty ),+ ) => {
         {
             let inp = input!();
@@ -18,16 +22,15 @@ macro_rules! parse_input {
             ($( inp.next().unwrap().parse::<$ty>().unwrap(), )+)
         }
     };
+
     ( vec $ty:ty ) => {
-        {
-            input!().split(' ').map(|v| v.parse::<$ty>().unwrap()).collect::<Vec<$ty>>()
-        }
+        input!().split(' ').map(|v| v.parse::<$ty>().unwrap()).collect::<Vec<$ty>>()
     }
 }
 
 
 fn main() {
-    let (lines,) = parse_input!(u32);
+    let lines = parse_input!(u32);
     let mut n = 0;
     for _ in 0..lines {
         let (f1, f2, f3) = parse_input!(u32, u32, u32);

@@ -11,6 +11,10 @@ macro_rules! input {
 }
 
 macro_rules! parse_input {
+    ( $ty:ty ) => {
+        input!().trim().parse::<$ty>().unwrap()
+    };
+
     ( $( $ty:ty ),+ ) => {
         {
             let inp = input!();
@@ -18,10 +22,9 @@ macro_rules! parse_input {
             ($( inp.next().unwrap().parse::<$ty>().unwrap(), )+)
         }
     };
+
     ( vec $ty:ty ) => {
-        {
-            input!().split(' ').map(|v| v.parse::<$ty>().unwrap()).collect::<Vec<$ty>>()
-        }
+        input!().split(' ').map(|v| v.parse::<$ty>().unwrap()).collect::<Vec<$ty>>()
     }
 }
 

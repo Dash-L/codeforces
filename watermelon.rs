@@ -11,6 +11,10 @@ macro_rules! input {
 }
 
 macro_rules! parse_input {
+    ( $ty:ty ) => {
+        input!().trim().parse::<$ty>().unwrap()
+    };
+
     ( $( $ty:ty ),+ ) => {
         {
             let inp = input!();
@@ -18,15 +22,14 @@ macro_rules! parse_input {
             ($( inp.next().unwrap().parse::<$ty>().unwrap(), )+)
         }
     };
+
     ( vec $ty:ty ) => {
-        {
-            input!().split(' ').map(|v| v.parse::<$ty>().unwrap()).collect::<Vec<$ty>>()
-        }
+        input!().split(' ').map(|v| v.parse::<$ty>().unwrap()).collect::<Vec<$ty>>()
     }
 }
 
 
 fn main() {
-    let (k,) = parse_input!(u32);
+    let k = parse_input!(u32);
     println!("{}", if k % 2 == 0 && k > 2 {"YES"} else {"NO"});
 }

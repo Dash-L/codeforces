@@ -11,18 +11,26 @@ macro_rules! input {
 }
 
 macro_rules! parse_input {
+    ( $ty:ty ) => {
+        input!().trim().parse::<$ty>().unwrap()
+    };
+
     ( $( $ty:ty ),+ ) => {
         {
             let inp = input!();
             let mut inp = inp.split(' ');
             ($( inp.next().unwrap().parse::<$ty>().unwrap(), )+)
         }
+    };
+
+    ( vec $ty:ty ) => {
+        input!().split(' ').map(|v| v.parse::<$ty>().unwrap()).collect::<Vec<$ty>>()
     }
 }
 
 
 fn main() {
-    let (n,) = parse_input!(u32);
+    let n = parse_input!(u32);
     for _ in 0..n {
         let (word,) = parse_input!(String);
         if word.len() > 10 {
