@@ -1,30 +1,28 @@
 use std::io::stdin;
 
-macro_rules! input {
-    () => {
+macro_rules! parse_input {
+    ( ) => {
         {
             let mut s = String::new();
             stdin().read_line(&mut s).unwrap();
             s.trim().to_owned()
         }
-    }
-}
-
-macro_rules! parse_input {
+    };
+            
     ( $ty:ty ) => {
-        input!().parse::<$ty>().unwrap()
+        parse_input!().parse::<$ty>().unwrap()
     };
 
     ( $( $ty:ty ),+ ) => {
         {
-            let inp = input!();
+            let inp = parse_input!();
             let mut inp = inp.split(' ');
             ($( inp.next().unwrap().parse::<$ty>().unwrap(), )+)
         }
     };
 
     ( vec $ty:ty ) => {
-        input!().split(' ').map(|v| v.parse::<$ty>().unwrap()).collect::<Vec<$ty>>()
+        parse_input!().split(' ').map(|v| v.parse::<$ty>().unwrap()).collect::<Vec<$ty>>()
     }
 }
 
