@@ -30,7 +30,7 @@ macro_rules! parse_input {
 fn main() {
     let n = parse_input!(u32);
     for _ in 0..n {
-        let (word,) = parse_input!(String);
+        let word = parse_input!();
         if word.len() > 10 {
             println!("{}{}{}", word.get(0..1).unwrap(), word.len() - 2, word.get((word.len() - 1)..(word.len())).unwrap());
         } else {

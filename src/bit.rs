@@ -31,7 +31,7 @@ fn main() {
     let n = parse_input!(usize);
     let mut x = 0;
     for _ in 0..n {
-        let line = input!();
+        let line = parse_input!();
         if line.contains("+") {
             x += 1;
         } else if line.contains("-") {

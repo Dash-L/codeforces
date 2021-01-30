@@ -1,0 +1,102 @@
+watermelon:
+test1:
+input:
+8
+expected:
+YES
+
+long_words:
+test1:
+input:
+4
+word
+localization
+internationalization
+pneumonoultramicroscopicsilicovolcanoconiosis
+expected:
+word
+l10n
+i18n
+p43s
+
+team:
+test1:
+input:
+3
+1 1 0
+1 1 1
+1 0 0
+expected:
+2
+test2:
+input:
+2
+1 0 0
+0 1 1
+expected:
+1
+
+next_round:
+test1:
+input:
+8 5
+10 9 8 7 7 7 5 5
+expected:
+6
+test2:
+input:
+4 2
+0 0 0 0
+expected:
+0
+
+dominos:
+test1:
+input:
+2 4
+expected:
+4
+test2:
+input:
+3 3
+expected:
+4
+
+bit:
+test1:
+input:
+1
+++X
+expected:
+1
+test2:
+input:
+2
+X++
+--X
+expected:
+0
+
+nezz_lucky:
+test1:
+input:
+2
+3 7
+24 25 27
+10 7
+51 52 53 54 55 56 57 58 59 60
+expected:
+YES
+NO
+YES
+YES
+YES
+NO
+YES
+YES
+YES
+YES
+YES
+YES
+NO
+
