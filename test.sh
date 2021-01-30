@@ -29,6 +29,10 @@ do_test() {
             echo OK
         else
             echo FAILED
+            echo got:
+            echo "$OUTPUT"
+            echo expected:
+            echo "$EXPECTED"
         fi
         TEST_NUM=$((TEST_NUM + 1))
     done
