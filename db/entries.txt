@@ -5,3 +5,4 @@ next_round
 dominos
 bit
 nezz_lucky
+red_blue
