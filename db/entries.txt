@@ -7,3 +7,5 @@ bit
 nezz_lucky
 red_blue
 string_lcm
+strange_list
+torches
