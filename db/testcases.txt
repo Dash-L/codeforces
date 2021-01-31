@@ -126,3 +126,18 @@ expected:
 0
 0
 
+string_lcm:
+test1:
+input:
+3
+baba
+ba
+aa
+aaa
+aba
+ab
+expected:
+baba
+aaaaaa
+-1
+

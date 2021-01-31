@@ -6,3 +6,4 @@ dominos
 bit
 nezz_lucky
 red_blue
+string_lcm
