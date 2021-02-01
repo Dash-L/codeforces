@@ -32,17 +32,15 @@ fn main() {
     for _ in 0..n {
         let (_, x) = parse_input!(usize, usize);
         let mut a = parse_input!(vec usize);
-        let mut i = 0;
+        let mut sum = 0;
         loop {
-            if a[i] % x == 0 {
-                for _ in 0..x {
-                    a.push(a[i] / x);
-                }
+            if a.len() > 0 && a[0] % x == 0 {
+                a.append(&mut [a[0] / x].repeat(x));
+                sum += a.remove(0);
             } else {
                 break;
             }
-            i += 1;
         }
-        println!("{}", a.iter().sum::<usize>());
+        println!("{}", sum + a.iter().sum::<usize>());
     }
 }
