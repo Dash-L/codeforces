@@ -4,7 +4,7 @@ do_test() {
     rustc --out-dir build/ src/$1.rs
 
     NLINES=$(wc -l db/testcases.txt | sed "s/ .*//")
-    SLINE=$(grep -n "$1" db/testcases.txt | sed "s/:.*//")
+    SLINE=$(grep -n "$1" db/testcases.txt | sed "s/:.*//" | head -n 1)
     ELINE=$(tail -n $((NLINES - SLINE)) db/testcases.txt | grep -n "^$" | sed "s/:.*//" | head -n 1)
     TEST_DATA=$(sed -n ${SLINE},$((ELINE + SLINE - 1))p db/testcases.txt)
     DATA_LEN=$(echo "$TEST_DATA" | wc -l)
