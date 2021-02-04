@@ -190,3 +190,27 @@ expected:
 1
 1
 
+cards_for_friends:
+test1:
+input:
+5
+2 2 3
+3 3 2
+5 10 2
+11 13 1
+1 4 4
+expected:
+YES
+NO
+YES
+YES
+YES
+
+edit_distance:
+test1:
+input:
+LOVE
+MOVIE
+expected:
+2
+

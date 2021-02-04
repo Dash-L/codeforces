@@ -10,3 +10,5 @@ string_lcm
 strange_list
 torches
 nezz_colorful_balls
+cards_for_friends
+edit_distance
